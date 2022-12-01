@@ -1,0 +1,28 @@
+weight = 8
+
+
+if weight >= 2:
+  cost_ground = weight * 1.5 + 20
+if weight >= 6:
+    cost_ground = weight * 1.5 + 20
+if weight >= 10:
+    cost_ground = weight * 1.5 + 20
+if weight > 10:
+    cost_ground = weight * 1.5 + 20
+print (cost_ground)
+cost_ground_premium = 125.00
+ 
+print("Ground Shipping Premium $", cost_ground_premium)
+
+#drone shipping
+
+if weight >= 2:
+  cost_drone = weight * 4.5
+if weight >= 2:
+  cost_drone = weight * 9
+if weight >= 2:
+  cost_drone = weight * 12
+if weight >= 2:
+  cost_drone = weight * 14.25
+
+print("Drone Shipping: $", cost_drone)

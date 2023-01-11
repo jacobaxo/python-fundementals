@@ -1,0 +1,69 @@
+#class can take in variables
+#methods too
+#think of class like a blueprint
+
+class enemy:
+    hp = 100
+    luck = 5
+    attackdamage = 10
+    enemyname = "Bob"
+    defense = 20
+    reward = 2
+
+    def __init__(self, name, hp, luck, attackdamage, defense, reward): #dunder(double under score)
+        self.hp = hp
+        self.luck = luck
+        self.attackdamage = attackdamage
+        self.enemyname = name
+        self.defense = defense
+        self.reward = reward
+    
+
+
+    def enemyatack(self, player):
+        enemy.hp -= (f"{self.enemyname} attacked {enemy.enemyname} for {(self.attackdamage - enemy.defense)} damage.")
+
+    def enemydefend(self, player):
+        enemy.hp -= (f"{self.enemyname} defended {enemy.enemyname} for {(self.defense + player.attackdamage)} damage")
+
+
+class player():
+    hp = 100
+    attackdamage = 20
+    playername = "Bobby"
+    defense = 5
+    gold = 50
+
+    def __init__(self, name, hp, luck, attackdamage, defense, gold):
+        self.playername = name
+        self.hp = hp
+        self.attackdamage = attackdamage
+        self.luck = luck
+        self.defense = defense
+        self.gold = gold
+
+    def playerattack(self, enemy):
+        enemy.hp -= (self.attackdamage - enemy.defense)
+
+        if enemy.hp <= 0:
+            print(f"{enemy.enemyname} died")
+
+    def playerdefend(self, enemy):
+        pass
+
+    def heal(self, target):
+        pass
+
+blobthebuilder = enemy("blob the builder", 100, 3, 10, 3, 100)
+catelinthetorturer = enemy("catelin the torturer", 300, 10, 50, 10, 500)
+
+anothonytheantoplope = player("anthony the antolope", 100, 4, 10, 20, 45)
+giffordthegiant = player("gifford the giant", 140, 3, 30, 25, 123)
+Mart = player("mart", 302, 12, 3, 0, 11)
+na = player("na", 12, 13, 13, 3, 31)
+
+print(f"{catelinthetorturer.enemyname} attacks for {catelinthetorturer.attackdamage} damage.")
+
+catelinthetorturer.attackdamage *= 1.5
+
+print(f"{catelinthetorturer.enemyname} gets a blessing form the gods and gets a 1.5 times increase in damage and attacks again for {catelinthetorturer.attackdamage} damage")
